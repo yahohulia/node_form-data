@@ -6,7 +6,7 @@ const fs = require('fs');
 function createServer() {
   return http.createServer((req, res) => {
     if (req.method === 'GET' && req.url === '/') {
-      const fileStream = fs.createReadStream('public/index.html');
+      const fileStream = fs.createReadStream('src/index.html');
 
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
       fileStream.pipe(res);
