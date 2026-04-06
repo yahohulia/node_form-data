@@ -28,6 +28,11 @@ function createServer() {
       req.on('end', () => {
         const data = JSON.parse(body);
 
+        // eslint-disable-next-line
+        console.log(body);
+        // eslint-disable-next-line
+        console.log(data);
+
         if (!data.date || !data.title || !data.amount) {
           res.writeHead(400, { 'Content-Type': 'text/plain' });
           res.end('Missing some fields');
